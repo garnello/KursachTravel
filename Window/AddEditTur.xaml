@@ -1,0 +1,33 @@
+﻿<Window x:Class="KursachTravel.Window.AddEditTur"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:KursachTravel.Window"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="AddEditTur" Height="550" Width="400">
+    <Grid Background="{DynamicResource FirstMainColor}"> 
+        <Border CornerRadius="10" Padding="30"
+                Background="{DynamicResource FirstTextColor}"
+                VerticalAlignment="Center" HorizontalAlignment="Center">
+            <StackPanel Height="330" Width="300" Style="{DynamicResource StackPanelAddEditStyle}">
+                <Label Content="Название тура" Style="{DynamicResource LabelStyle}"/>
+                <TextBox  x:Name="TurTitle" Style="{DynamicResource TextBoxAddEditStyle}"/>
+                
+                <Label Content="Краткое описание" Style="{DynamicResource LabelStyle}"/>
+                <TextBox  x:Name="DescriptionTur" Style="{DynamicResource TextBoxAddEditStyle}"/>
+                
+                <Label Content="Длительность тура" Style="{DynamicResource LabelStyle}"/>
+                <TextBox x:Name="DurationTur" Style="{DynamicResource TextBoxAddEditStyle}"/>
+                
+                <Button Content="Сохранить"
+                        Style="{DynamicResource ButtonAddEditStyle}" 
+                        Click="ButtonSave"/>
+                <Button Content="Отмена" Click="CancelButton" 
+                        Style="{DynamicResource ButtonAddEditStyle}"/>
+            </StackPanel>
+            
+            </Border>
+    </Grid>
+</Window>

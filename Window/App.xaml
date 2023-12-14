@@ -1,0 +1,242 @@
+﻿<Application x:Class="KursachTravel.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:KursachTravel"
+             StartupUri="RegWindow.xaml">
+    <Application.Resources>
+                            <!--Color-->
+        <SolidColorBrush x:Key="FirstMainColor" Color="#45cea2" />
+        <SolidColorBrush x:Key="SecondColor" Color="#Eff2FF"/>
+        <SolidColorBrush x:Key="FirstTextColor" Color="#FFFFFF"/>
+        <SolidColorBrush x:Key="SecondTextColor" Color="#BBC1D1"/>
+        <SolidColorBrush x:Key="Color" Color="#BBC1D1"/>
+        <SolidColorBrush x:Key="BrushColor"  Color="#076f7d"/>
+        <SolidColorBrush x:Key="TextColorListView" Color="#51757d"/>
+        <SolidColorBrush x:Key="ColorListView" Color="#b8b8b8"/>
+                            <!--Color-->
+                           
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="{DynamicResource TextColorListView}"/>
+            <Setter Property="Height" Value="20"/>
+            <Setter Property="Width" Value="60"/>
+            <Setter Property="Margin" Value="6 0 0 5"/>
+        </Style>
+                            
+        <Style x:Key="SearchTextBoxStyle" TargetType="TextBox">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="{DynamicResource TextColorListView}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ColorListView}"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontFamily" Value="Brass Mono"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Margin" Value="5 0 5 5"/>
+        </Style> <!--SerachTextBoxStyle-->
+        
+        <Style x:Key="ListViewStyle" TargetType="ListView">
+             <Setter Property="Background" Value="Transparent"/>
+             <Setter Property="BorderThickness" Value="0"/>
+             <Setter Property="Foreground" Value="{DynamicResource TextColorListView}"/>
+             <Setter Property="Height" Value="330"/>
+             <Setter Property="Width" Value="697"/>
+             <Setter Property="Margin" Value="5 5"/>
+             <Setter Property="VerticalAlignment" Value="Top"/>
+             <Setter Property="HorizontalAlignment" Value="Left"/>
+             <Setter Property="FontSize" Value="18"/>
+             <Setter Property="FontFamily" Value="Brass Mono"/>
+             <Setter Property="FontWeight" Value="DemiBold"/>
+             <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        </Style> <!--ListViewStyle-->
+                            
+        <Style x:Key="GridViewHeaderStyle" TargetType="GridViewColumnHeader">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="{DynamicResource TextColorListView}"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="BorderBrush" Value="#171717"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontFamily" Value="Brass Mono"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        </Style> <!--GridViewHeaderStyle-->
+                            
+        <Style x:Key="GroupBoxStyle" TargetType="GroupBox">
+            <Setter Property="Width" Value="730"/>
+            <Setter Property="Height" Value="334"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource Color}"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Padding" Value="5"/>
+        </Style> <!--GroupBoxStyle-->
+                            
+        <Style TargetType="Label">
+            <Setter Property="FontFamily" Value="Cascadia Code"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style> <!--Label-->
+        
+        <Style x:Key="LabelStyle" TargetType="Label">
+            <Setter Property="FontFamily" Value="Cascadia Code"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Width" Value="140"/>
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="Foreground" Value="{DynamicResource BrushColor}"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Bottom"/>
+            <Setter Property="Margin" Value="20 10 0 0"/>
+        </Style> <!--LabelStyle-->
+        
+        <Style x:Key="ButtonAddEditStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="{DynamicResource BrushColor}"/>
+            <Setter Property="Height" Value="35"/>
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Margin" Value="15 10 15 0"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Bottom"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource BrushColor}"/>
+            <Setter Property="BorderThickness" Value="2"/>
+        </Style> <!--ButtonAddEditStyle-->
+        
+        <Style x:Key="TextBoxAddEditStyle" TargetType="TextBox">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="{DynamicResource BrushColor}"/>
+            <Setter Property="FontFamily" Value="Cascadia Code"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource BrushColor}"/>
+            <Setter Property="Width" Value="250"/>
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="Margin" Value="10 5 0 0"/>
+        </Style> <!--TextBoxAddEditStyle-->
+        
+        <Style x:Key="TextBoxAuthStyle" TargetType="TextBox"> 
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="{DynamicResource BrushColor}"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontFamily" Value="Cascadia Code"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Width" Value="250"/>
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource BrushColor}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+        </Style> <!--TextBoxAuthStyle-->
+        
+        <Style x:Key="PassBoxAuthStyle" TargetType="PasswordBox"> 
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontFamily" Value="Cascadia Code"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Width" Value="250"/>
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource BrushColor}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+        </Style> <!--PassBoxAuthStyle-->
+        
+        <Style x:Key="BorderStyle" TargetType="Border">
+            <Setter Property="Background" Value="{DynamicResource SecondColor}"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource BrushColor}"/>
+            <Setter Property="Padding" Value="30"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="CornerRadius" Value="10"/>
+        </Style> <!--BorderStyle-->
+        
+        <Style x:Key="StackPanelAddEditStyle" TargetType="StackPanel">
+            <Setter Property="Background" Value="{DynamicResource SecondColor}"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            </Style> <!--StackPanelAddEditStyle-->
+        
+        <Style x:Key="TabControlStyle" TargetType="TabControl">
+            <Setter Property="Background" Value="{DynamicResource SecondColor}"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TabControl">
+                        <Grid SnapsToDevicePixels="True">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            
+                            <TabPanel Grid.Row="0" Background="Transparent"
+                                      IsItemsHost="True" HorizontalAlignment="Center"/>
+                            <Border Grid.Row="1" CornerRadius="5"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    Background="{TemplateBinding Background}">
+                                <ContentPresenter ContentSource="SelectedContent"
+                                                  SnapsToDevicePixels="True"
+                                                  Margin="{TemplateBinding Padding}"/>
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style> <!--TabControlStyle-->
+        
+        <Style x:Key="TabItemStyle" TargetType="TabItem">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="{DynamicResource SecondTextColor}"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Margin" Value="0 0 5 0"/>
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Padding" Value="10 10"/>
+            <Setter Property="FontWeight" Value="500"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TabItem">
+                        <Grid SnapsToDevicePixels="True">
+                            <Border CornerRadius="5" 
+                                    Background="{TemplateBinding Background}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    Margin="{TemplateBinding Margin}"/>
+                                <ContentPresenter HorizontalAlignment="Center"
+                                                  VerticalAlignment="Center"
+                                                  SnapsToDevicePixels="True"
+                                                  RecognizesAccessKey="True"
+                                                  Margin="{TemplateBinding Padding}"
+                                                  ContentSource="Header"
+                                                  Focusable="False"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                             <Setter Property="Background"
+                                     Value="{DynamicResource SecondColor}"/>
+                             <Setter Property="Foreground"
+                                     Value="{DynamicResource FirstTextColor}"/>
+                            </Trigger>
+                            
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="Background"
+                                        Value="{DynamicResource FirstMainColor}"/>
+                                <Setter Property="Foreground"
+                                        Value="{DynamicResource FirstTextColor}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style> <!--TabItemStyle-->
+    </Application.Resources>
+</Application>

@@ -1,0 +1,209 @@
+﻿<Window x:Class="KursachTravel.Window.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:KursachTravel.Window"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Travel" Height="600" Width="1000"
+        FontFamily="Cascadia Code">
+    <Grid Background="{DynamicResource FirstMainColor}">
+        <Border CornerRadius="10" Background="{DynamicResource FirstTextColor}"
+                        Padding="30" 
+                        VerticalAlignment="Center" HorizontalAlignment="Center">
+
+            <TabControl Width="750" Height="500" Style="{DynamicResource TabControlStyle}">
+                <TabItem Header="Туры" Style="{DynamicResource TabItemStyle}">
+                    <StackPanel Height="440">
+                        <TextBlock Text="Туры" Foreground="{DynamicResource SecondTextColor}"
+                                   FontSize="20" FontWeight="Bold" Margin="15"
+                                   VerticalAlignment="Top"
+                                   HorizontalAlignment="Left"/>
+                        <StackPanel Orientation="Horizontal" Height="25">
+                            <TextBox Name="SearchTextBoxTur" Width="200"
+                                    Style="{DynamicResource SearchTextBoxStyle}"/>
+                            
+                            <Button Content="Поиск" Margin="2 0 0 5"
+                                    Click="SearchButtonTur" Style="{DynamicResource ButtonStyle}"/>
+                        </StackPanel>
+                        
+                        <StackPanel Orientation="Horizontal">
+                            <Button Content="Добавить" Width="130" Click="AddButtonTur"
+                                    Style="{DynamicResource ButtonStyle}"/>
+                            
+                            <Button Content="Удалить" Width="130" Click="DeleteButtonTur"
+                                   Style="{DynamicResource ButtonStyle}"/>
+                            
+                            <Button Height="25" Width="25" Click="UpdateButtonTur" Margin="5 0 5 0" 
+                                    Background="Transparent" BorderThickness="0">
+                                <Image Margin="2 0 0 5 " Source="../Models/Image/update.png"/>
+                            </Button>
+                        </StackPanel>
+                        
+                        <GroupBox Style="{DynamicResource GroupBoxStyle}">
+                            <ListView x:Name="TurListView"
+                                      ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                      Style="{DynamicResource ListViewStyle}">
+                                <ListView.View>
+                                    <GridView ColumnHeaderContainerStyle="{DynamicResource GridViewHeaderStyle}">
+                                        <GridViewColumn Header="Название тура" Width="175"
+                                                            DisplayMemberBinding="{Binding TitleTur}"/>
+                                        <GridViewColumn Header="Краткое описание" Width="350"
+                                                            DisplayMemberBinding="{Binding Description}"/>
+                                        <GridViewColumn Header="Длительность" Width="170"
+                                                            DisplayMemberBinding="{Binding Duration}"/>
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
+                        </GroupBox>
+                    </StackPanel>
+                </TabItem>
+                <!--Туры-->
+
+                <TabItem Header="Клиенты" Style="{DynamicResource TabItemStyle}">
+                    <StackPanel Height="440">
+                        <TextBlock Text="Клиенты" Foreground="{DynamicResource SecondTextColor}"
+                                   FontSize="20" FontWeight="Bold" Margin="15"
+                                   VerticalAlignment="Top"
+                                   HorizontalAlignment="Left"/>
+                        
+                        <StackPanel Orientation="Horizontal" Height="25">
+                            <TextBox Name="SearchTextBoxClient" Width="200"
+                                    Style="{DynamicResource SearchTextBoxStyle}"/>
+                            
+                            <Button Content="Поиск" Margin="2 0 0 5"
+                                    Click="SearchButtonClient" Style="{DynamicResource ButtonStyle}"/>
+                        </StackPanel>
+                        
+                        <StackPanel Orientation="Horizontal">
+                            <Button Content="Добавить" Width="130" Click="AddButtonClient"
+                                    Style="{DynamicResource ButtonStyle}"/>
+                            
+                            <Button Content="Удалить" Width="130" Click="DeleteButtonClient"
+                                   Style="{DynamicResource ButtonStyle}"/>
+                            
+                            <Button Height="25" Width="25" Click="UpdateButtonClient" Margin="5 0 5 0" 
+                                    Background="Transparent" BorderThickness="0">
+                                <Image Margin="2 0 0 5 " Source="../Models/Image/update.png"/>
+                            </Button>
+                        </StackPanel>
+                        
+                        <GroupBox Style="{DynamicResource GroupBoxStyle}">
+                            <ListView x:Name="ClientListView"
+                                      ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                      Style="{DynamicResource ListViewStyle}">
+                                <ListView.View>
+                                    <GridView ColumnHeaderContainerStyle="{DynamicResource GridViewHeaderStyle}">
+                                        <GridViewColumn Header="ФИО" Width="275"
+                                                            DisplayMemberBinding="{Binding FIO}"/>
+                                        <GridViewColumn Header="Пожелания" Width="295"
+                                                            DisplayMemberBinding="{Binding Preferences}"/>
+                                        <GridViewColumn Header="Телефон" Width="123"
+                                                            DisplayMemberBinding="{Binding Telephone}"/>
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
+                        </GroupBox>
+                    </StackPanel>
+                </TabItem>
+                <!--Клиенты-->
+
+                <TabItem Header="Услуги" Style="{DynamicResource TabItemStyle}">
+                    <StackPanel Height="440">
+                        <TextBlock Text="Услуги" Foreground="{DynamicResource SecondTextColor}"
+                                   FontSize="20" FontWeight="Bold" Margin="15"
+                                   VerticalAlignment="Top"
+                                   HorizontalAlignment="Left"/>
+                        
+                        <StackPanel Orientation="Horizontal" Height="25">
+                            <TextBox Name="SearchTextBoxService" Width="200"
+                                    Style="{DynamicResource SearchTextBoxStyle}"/>
+                            
+                            <Button Content="Поиск" Margin="2 0 0 5"
+                                    Click="SearchButtonService" Style="{DynamicResource ButtonStyle}"/>
+                        </StackPanel>
+                        
+                        <StackPanel Orientation="Horizontal">
+                            <Button Content="Добавить" Width="130" Click="AddButtonService"
+                                    Style="{DynamicResource ButtonStyle}"/>
+                            
+                            <Button Content="Удалить" Width="130" Click="DeleteButtonService"
+                                   Style="{DynamicResource ButtonStyle}"/>
+                            
+                            <Button Height="25" Width="25" Click="UpdateButtonService" Margin="5 0 5 0" 
+                                    Background="Transparent" BorderThickness="0">
+                                <Image Margin="2 0 0 5 " Source="../Models/Image/update.png"/>
+                            </Button>
+                        </StackPanel>
+                        
+                        <GroupBox Style="{DynamicResource GroupBoxStyle}">
+                            <ListView x:Name="ServiceListView"
+                                      ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                      Style="{DynamicResource ListViewStyle}">
+                                <ListView.View>
+                                    <GridView ColumnHeaderContainerStyle="{DynamicResource GridViewHeaderStyle}">
+                                        <GridViewColumn Header="Название" Width="275"
+                                                            DisplayMemberBinding="{Binding Title}"/>
+                                        <GridViewColumn Header="Цена" Width="295"
+                                                            DisplayMemberBinding="{Binding Cost}"/>
+                                        <GridViewColumn Header="Длительность" Width="123"
+                                                            DisplayMemberBinding="{Binding Duration}"/>
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
+                        </GroupBox>
+                    </StackPanel>
+                </TabItem>
+                <!--Услуги-->
+
+                <TabItem Header="Партнеры" Style="{DynamicResource TabItemStyle}">
+                    <StackPanel Height="440">
+                        <TextBlock Text="Партнеры" Foreground="{DynamicResource SecondTextColor}"
+                                   FontSize="20" FontWeight="Bold" Margin="15"
+                                   VerticalAlignment="Top"
+                                   HorizontalAlignment="Left"/>
+                        <StackPanel Orientation="Horizontal" Height="25">
+                            <TextBox Name="SearchTextBoxPartner" Width="200"
+                                    Style="{DynamicResource SearchTextBoxStyle}"/>
+                            
+                            <Button Content="Поиск" Margin="2 0 0 5"
+                                    Click="SearchButtonPartner" Style="{DynamicResource ButtonStyle}"/>
+                        </StackPanel>
+                        
+                        <StackPanel Orientation="Horizontal">
+                            <Button Content="Добавить" Width="130" Click="AddButtonPartner"
+                                    Style="{DynamicResource ButtonStyle}"/>
+                            
+                            <Button Content="Удалить" Width="130" Click="DeleteButtonPartner"
+                                   Style="{DynamicResource ButtonStyle}"/>
+                            
+                            <Button Height="25" Width="25" Click="UpdateButtonPartner" Margin="5 0 5 0" 
+                                    Background="Transparent" BorderThickness="0">
+                                <Image Margin="2 0 0 5 " Source="../Models/Image/update.png"/>
+                            </Button>
+                        </StackPanel>
+                        
+                        <GroupBox Style="{DynamicResource GroupBoxStyle}">
+                            <ListView x:Name="PartnerListView"
+                                      ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                      Style="{DynamicResource ListViewStyle}">
+                                <ListView.View>
+                                    <GridView ColumnHeaderContainerStyle="{DynamicResource GridViewHeaderStyle}">
+                                        <GridViewColumn Header="Название" Width="275"
+                                                            DisplayMemberBinding="{Binding Title}"/>
+                                        <GridViewColumn Header="Телефон" Width="180"
+                                                            DisplayMemberBinding="{Binding Telephone}"/>
+                                        <GridViewColumn Header="Email" Width="240"
+                                                            DisplayMemberBinding="{Binding Email}"/>
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
+                        </GroupBox>
+                    </StackPanel>
+                </TabItem>
+                <!--Партнеры-->
+            </TabControl>
+        </Border>
+    </Grid>
+</Window>

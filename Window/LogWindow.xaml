@@ -1,0 +1,39 @@
+﻿<Window x:Class="KursachTravel.Window.LogWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:KursachTravel.Window"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="TL" Height="600" Width="400">
+    <Grid Background="{DynamicResource FirstMainColor}">
+        <Label Content="TraveL"
+               FontSize="35" MaxHeight="450"
+               HorizontalAlignment="Center" 
+               Margin="0,50,0,469"/>
+
+        <Border Style="{DynamicResource BorderStyle}">
+            <StackPanel>
+                <Label FontSize="25" HorizontalAlignment="Center" Content="Вход"/>
+                <Label Content="Логин" FontSize="15"/>
+                <TextBox x:Name="log" 
+                         Style="{DynamicResource TextBoxAuthStyle}"/>
+
+                <Label Content="Пароль" FontSize="15"/>
+                <PasswordBox x:Name="pas" 
+                             Style="{DynamicResource PassBoxAuthStyle}"/>
+
+                <Grid Margin="5 15 5 0" Height="46">
+                    <Button x:Name="Reg_Button" Content="Регистрация" Height="25" Width="75" 
+                            Margin="20 5 0 5" HorizontalAlignment="Left"
+                            Click="RegButton" FontFamily="C"/>
+
+                    <Button x:Name="Log_Button" Content="Вход" Height="25" Width="76" 
+                            Margin="0 5 20 5" HorizontalAlignment="Right" 
+                            Click="LogButton"/>
+                </Grid>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
